@@ -10,6 +10,17 @@ sudo python3 FFT.py
 
 results:
 
+choose 1
+![](https://i.imgur.com/LB70fsp.jpg)
+choose 1/2
+![](https://i.imgur.com/KHTLcxZ.jpg)
+choose 1/4
+![](https://i.imgur.com/s6hd3QD.jpg)
+choose 1/8
+![](https://i.imgur.com/FNazBFL.jpg)
+select (take 1/8 for example)
+![](https://i.imgur.com/7a5f7lY.jpg)
+
 select 1, measured by picoscope
 ![](https://i.imgur.com/0gRYMrB.png)
 select 1/2, measured by picoscope
