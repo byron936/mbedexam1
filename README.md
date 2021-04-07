@@ -1,6 +1,8 @@
 # mbed exam1
 setup:
-![](https://i.imgur.com/TWMlw0W.jpg)
+![](https://i.imgur.com/TWMlw0W.jpg)  
+
+First, I use an integer "n" to control four choices on uLCD. n equals to 0 is 1, n equals to 1 is 1/2, n equals to 2 is 1/4, n equals to 3 is 1/8. Then, I use "up" and "down" button to decrease and increase n's value. Note that when n equals to 0 I cannot do n-- and when n equals to 3 I cannot do n++. After choosing a rate, I press "select" button to select the rate I want. Afer that, I will generate different waveform determined by n's value. Using sleep_for function can easily generate a desire waveform. Next, I take sample points every 20ms, which is sampling rate 50Hz, and take 50 points in 1 second. Then I use FFT.py to do the fourier transform.
 
 compile main.cpp:
 sudo mbed compile --source . --source ~/ee2405/mbed-os-build/ -m B_L4S5I_IOT01A -t GCC_ARM -f
@@ -8,9 +10,9 @@ sudo mbed compile --source . --source ~/ee2405/mbed-os-build/ -m B_L4S5I_IOT01A 
 compile FFT.py:
 sudo python3 FFT.py
 
-results:
+results:  
 
-uLCD:
+uLCD:  
 choose 1  
 ![](https://i.imgur.com/LB70fsp.jpg)  
 choose 1/2  
