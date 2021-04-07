@@ -1,5 +1,3 @@
-// R = 270ohm, C = 561nF, cutoff_freq = 1050Hz
-// S = 1 + 0 + 8 + 0 + 6 + 0 + 0 + 3 + 4 = 2
 #include "mbed.h"
 
 #include "uLCD_4DGL.h"
@@ -12,8 +10,6 @@ DigitalIn but3(D11);
 
 AnalogOut aout(D7);
 
-AnalogIn ain(A0);
-
 uLCD_4DGL uLCD(D1, D0, D2); // serial tx, serial rx, reset pin;
 
 EventQueue queue(32 * EVENTS_EVENT_SIZE);
@@ -22,7 +18,7 @@ Timer ti;
 Thread t;
 Thread t2;
 
-float ADCdata[1000];
+float ADCdata[100];
 int n = 0;
 int flag = 1;
 
@@ -219,17 +215,14 @@ int main()
     }
 
     t2.start(generate_wave);
-    //ti.start();
-    /*for (int i = 0; i < 1000; i++)
+
+    for (int i = 0; i < 100; i++)
     {
-        ADCdata[i] = ain;
-        ThisThread::sleep_for(1ms);
-    }*/
-    //ti.stop();
-    //auto s = chrono::duration_cast<chrono::seconds>(ti.elapsed_time()).count();
-    //printf("Timer time: %llu s\n", s);
-    //time:6s
-    for (int i = 0; i < 1000; i++)
+        ADCdata[i] = aout;
+        ThisThread::sleep_for(10ms);
+    }
+
+    for (int i = 0; i < 100; i++)
     {
         printf("%f\r\n", ADCdata[i]);
     }
