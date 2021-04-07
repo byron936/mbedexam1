@@ -134,46 +134,70 @@ void sel()
     //printf("select\n");
     queue.call(display_s);
 }
-/*
+
 void generate_wave()
 {
     if (n == 0)
         while (1)
         {
-            for (int i = 0; i < 48; i += 1)
+            for (int i = 0; i < 10; i += 1)
             {
-                aout = float(i) / 48.000;
+                aout = float(i) / 10;
+                ThisThread::sleep_for(8ms);
             }
-            for (int i = 192; i > 0; i -= 1)
+            ThisThread::sleep_for(80ms);
+            for (int i = 9; i >= 0; i -= 1)
             {
-                aout = float(i) / 192.000;
+                aout = float(i) / 10;
+                ThisThread::sleep_for(8ms);
             }
         }
     else if (n == 1)
         while (1)
         {
-            for (int i = 0; i < 25; i += 1)
+            for (int i = 0; i < 10; i += 1)
             {
-                aout = float(i) / 25.000;
+                aout = float(i) / 10;
+                ThisThread::sleep_for(4ms);
             }
-            for (int i = 100; i > 0; i -= 1)
+            ThisThread::sleep_for(160ms);
+            for (int i = 9; i >= 0; i -= 1)
             {
-                aout = float(i) / 100.000;
+                aout = float(i) / 10;
+                ThisThread::sleep_for(4ms);
             }
         }
     else if (n == 2)
         while (1)
         {
-            for (int i = 0; i < 17; i += 1)
+            for (int i = 0; i < 10; i += 1)
             {
-                aout = float(i) / 17.000;
+                aout = float(i) / 10;
+                ThisThread::sleep_for(2ms);
             }
-            for (int i = 68; i > 0; i -= 1)
+            ThisThread::sleep_for(200ms);
+            for (int i = 9; i >= 0; i -= 1)
             {
-                aout = float(i) / 68.000;
+                aout = float(i) / 10;
+                ThisThread::sleep_for(2ms);
             }
         }
-}*/
+    else if (n == 3)
+        while (1)
+        {
+            for (int i = 0; i < 10; i += 1)
+            {
+                aout = float(i) / 10;
+                ThisThread::sleep_for(1ms);
+            }
+            ThisThread::sleep_for(220ms);
+            for (int i = 9; i >= 0; i -= 1)
+            {
+                aout = float(i) / 10;
+                ThisThread::sleep_for(1ms);
+            }
+        }
+}
 
 int main()
 {
@@ -193,14 +217,14 @@ int main()
             sel();
         ThisThread::sleep_for(250ms);
     }
-    /*
+
     t2.start(generate_wave);
     //ti.start();
-    for (int i = 0; i < 1000; i++)
+    /*for (int i = 0; i < 1000; i++)
     {
         ADCdata[i] = ain;
         ThisThread::sleep_for(1ms);
-    }
+    }*/
     //ti.stop();
     //auto s = chrono::duration_cast<chrono::seconds>(ti.elapsed_time()).count();
     //printf("Timer time: %llu s\n", s);
@@ -209,5 +233,5 @@ int main()
     {
         printf("%f\r\n", ADCdata[i]);
     }
-    ThisThread::sleep_for(10000ms);*/
+    ThisThread::sleep_for(10000ms);
 }
